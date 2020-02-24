@@ -1,0 +1,29 @@
+
+.no-hover:hover {
+  box-shadow: none !important;
+  cursor: default !important;
+}
+
+.vb-r {
+  border-right: 0.5px solid $light-gray !important;
+}
+
+.hb-t{
+  border-top : 0.5px solid $light-gray !important;
+}
+
+@media (max-width: 799px) {
+  .hide-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 800px) {
+  .hide-xl {
+    display: none !important;
+  }
+}
+
+
+.clickable{
+  cursor: pointer;
+}

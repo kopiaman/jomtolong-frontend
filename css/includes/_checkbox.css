@@ -1,0 +1,24 @@
+input[type="checkbox"][chipstyle="yes"] {
+  display: none;
+}
+input[type="checkbox"][chipstyle="yes"] + label {
+  transition: all 0.1s ease;
+  font-size: 0.8em;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #b3b3b3;
+  padding: 0.2rem 0.5rem;
+  margin: 0.1em;
+  display: inline-block;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+input[type="checkbox"][chipstyle="yes"]:checked + label {
+  transition: all 0.1s ease;
+  background-color: #b3f7b3;
+  color: #000;
+  border-color: #b3f7b3;
+}

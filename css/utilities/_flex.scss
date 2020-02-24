@@ -1,0 +1,193 @@
+//
+.flex {
+  display: flex;
+}
+
+.flex-center{
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-center-mobile{
+  @include xs{
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// DIRECTION
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+// DIRECTION FOR MOBILE
+.flex-col-mobile{
+  @include xs{
+    flex-direction: column;
+  }
+}
+.flex-row-mobile{
+  @include xs{
+    flex-direction: row;
+  }
+}
+
+// DIRECTION FOR TABLET
+.flex-col-tablet{
+  @include md{
+    flex-direction: column;
+  }
+}
+.flex-row-tablet{
+  @include md{
+    flex-direction: row;
+  }
+}
+
+
+
+// WRAP
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+// ALIGN ITEMS ( Y AXIS)
+.items-stretch {
+  align-items: stretch;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-center {
+  align-items: center;
+}
+.items-end {
+  align-items: flex-end;
+}
+.items-baseline {
+  align-items: baseline;
+}
+
+// for mobile
+.items-starts-mobile{
+  @include xs{
+    align-items: flex-start;
+  }
+}
+
+.items-starts-tablet{
+  @include md{
+    align-items: flex-start;
+  }
+}
+
+.items-center-mobile{
+  @include xs{
+    align-items: center;
+  }
+}
+
+.items-center-tablet{
+  @include md{
+    align-items: center;
+  }
+}
+
+//JUSTIFY ( X_AXIS)
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-center {
+  justify-content: center !important;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+
+// for mobile
+.justify-starts-mobile{
+  @include xs{
+    justify-content: flex-start;
+  }
+}
+
+.justify-starts-tablet{
+  @include md{
+    justify-content: flex-start;
+  }
+}
+
+.justify-center-mobile{
+  @include xs{
+    justify-content: center;
+  }
+}
+
+.justify-center-tablet{
+  @include md{
+    justify-content: center;
+  }
+}
+
+
+
+// GROW AND SHRINK
+.flex-initial {
+  flex: initial;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-2{
+  flex: 2;
+}
+.flex-3 {
+  flex: 3;
+}
+.flex-4 {
+  flex: 4;
+}
+.flex-auto {
+  flex: auto;
+}
+.flex-none {
+  flex: none;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.flex-shrink {
+  flex-shrink: 1;
+}
+.flex-no-grow {
+  flex-grow: 0;
+}
+.flex-no-shrink {
+  flex-shrink: 0;
+}
+
+

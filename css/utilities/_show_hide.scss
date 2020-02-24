@@ -1,0 +1,67 @@
+// HIDE
+.hide{
+   display: none !important;
+}
+
+.hide-mobile{
+  @include xs{
+    display: none !important;
+  }
+}
+
+
+.hide-tablet{
+  @include md{
+    display: none !important;
+  }
+}
+
+.hide-desktop{
+  @include lg{
+    display: none ;
+  }
+}
+
+
+// SHOW BLOCK 
+.block{
+  display: block;
+}
+
+.block-mobile{
+  @include xs{
+    display: block;
+  }
+}
+
+
+.block-tablet{
+  @include md{
+    display: block;
+  }
+}
+
+.block-desktop{
+  @include lg{
+    display: block;
+  }
+}
+
+// SHOW FLEX 
+.flex-mobile{
+  @include xs{
+    display: flex;
+  }
+}
+
+.flex-tablet{
+  @include md{
+    display: flex;
+  }
+}
+
+.flex-desktop{
+  @include lg{
+    display: flex;
+  }
+}

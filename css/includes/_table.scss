@@ -1,0 +1,10 @@
+table.leftBold > tbody > tr > td:first-child {
+  font-weight: bolder;
+  width: 170px;
+}
+
+table.fixedRow {
+  tr {
+    height: 60px;
+  }
+}

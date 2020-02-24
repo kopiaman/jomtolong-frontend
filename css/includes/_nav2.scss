@@ -1,0 +1,187 @@
+
+@mixin desktop_nav_style{
+
+  //the navigation container
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 100;
+
+  a{
+    color: white;
+    text-decoration: none;
+  }
+
+  // navigation menu block
+  .navMenu{
+    width: auto;
+  }
+
+  // active state of menu
+  .nuxt-link-exact-active{
+    font-weight: bold;
+    color: #8000FF;
+    border-bottom:none;
+  }
+
+
+  @include md{
+    .navbar-item{
+      margin-left:0;
+    }
+  }
+}
+
+
+@mixin mobile_nav_style{
+  //the navigation container
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top:0;
+
+}
+
+@mixin mobile_menu_style{
+  position:fixed;
+  top: 50px;
+  height: auto;
+  left:0;
+  z-index: 50;
+  width: 100%;
+  &.active{
+    display: flex;
+    flex-wrap: wrap;
+
+    // have to display none if tablet or desktop
+    @include lg{
+      display: none;
+    }
+   
+  }
+  &.close{
+    display: none;
+  } 
+
+  .navbar-item{
+      margin-left:0;
+      color:white;
+      font-size: 1.4em;
+
+
+    &.nuxt-link-exact-active {
+      color: yellow;
+      font-size: bold;
+    }
+
+  }
+}
+
+
+/**
+ *
+ * CANDIDATE STYLE
+ *
+ */
+
+#candidateNav{
+
+  @include desktop_nav_style;
+  background-color: #333333;
+
+  .nuxt-link-exact-active{
+    color: #0F80FF;
+  }
+}
+
+
+#candidateNavMobile{
+
+  @include mobile_nav_style;
+  background-color: #333333;
+
+}
+
+#candidateMenuMobile{
+  @include mobile_menu_style;
+  background-color: #333333;
+
+  .navbar-item{
+      // color:black;
+    &.nuxt-link-exact-active {
+      color: white;
+    }
+  }
+} 
+
+
+/**
+ *
+ * RECRUITER STYLE
+ *
+ */
+
+
+#recruiterNav{
+
+  @include desktop_nav_style;
+  background-color: #333333;
+  a{
+    color:white;
+  }
+  .nuxt-link-exact-active{
+    color: yellow;
+  }
+}
+
+
+#recruiterNavMobile{
+
+  @include mobile_nav_style;
+  background: $bg-dark;
+
+}
+
+#recruiterMenuMobile{
+  @include mobile_menu_style;
+  background-color: #333333;
+  color: white;
+} 
+
+/**
+ *
+ * RECRUITER STYLE
+ *
+ */
+
+
+#employerNav{
+
+  @include desktop_nav_style;
+  //background-color: white;
+  a{
+    color:white;
+  }
+  .nuxt-link-exact-active{
+    color: cyan;
+  }
+}
+
+
+#employerNavMobile{
+
+  @include mobile_nav_style;
+  //background: white;
+
+}
+
+#employerMenuMobile{
+  @include mobile_menu_style;
+  background-color: white;
+  //color: white;
+} 
+
+  

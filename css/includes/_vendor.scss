@@ -1,0 +1,11 @@
+.title{
+   @include xs{
+    font-size: 1.6rem !important;
+  }
+}
+
+.subtitle{
+   @include xs{
+    font-size: 1.1rem !important;
+  } 
+}
