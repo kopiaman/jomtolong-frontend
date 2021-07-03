@@ -1,66 +1,97 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">suaquran</h1>
-      <h2 class="subtitle">My dazzling Nuxt.js project</h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+    <div class="mb-12">
+      <img src="/img/logofront.png" />
+    </div>
+    <div
+      class="
+        w-full
+        bg-white
+        border
+        rounded-lg
+        border-green-200
+        p-3
+        inline-flex
+        items-center
+        m-1
+        px-5
+      "
+    >
+      <img src="/img/icon-flag-me.png" class="h-12 mr-3" />
+      <div class="text-sm text-left">Permohonan bantuan untuk diri sendiri</div>
+    </div>
+    <div
+      class="
+        w-full
+        bg-white
+        border
+        rounded-lg
+        border-green-200
+        p-3
+        inline-flex
+        items-center
+        m-1
+        px-5
+      "
+    >
+      <img src="/img/icon-flag-others.png" class="h-12 mr-3" />
+      <div class="text-sm text-left w-2/3">
+        Permohonan bantuan untuk orang lain
       </div>
     </div>
+    <div
+      class="
+        w-full
+        bg-green-300
+        border
+        rounded-lg
+        border-green-200
+        p-3
+        inline-flex
+        items-center
+        m-1
+        px-5
+      "
+    >
+      <div class="text-sm text-left w-2/3">
+        Anda ingin membuat sumbangan terus ke penerima
+      </div>
+      <img src="/img/icon-donate.png" class="h-12 ml-3" />
+    </div>
+    <div
+      class="
+        w-full
+        bg-green-500
+        border
+        rounded-lg
+        border-green-200
+        p-3
+        inline-flex
+        items-center
+        m-1
+        px-5
+      "
+    >
+      <div class="text-sm text-left w-2/3">
+        Daftar sebagai pemberi bantuan di kawasan anda
+      </div>
+      <img src="/img/icon-ngo.png" class="h-12 ml-3" />
+    </div>
+    <p class="w-full h-3 text-sm text-center">v.0.1.0</p>
   </div>
 </template>
 
 <script>
-	import Logo from '~/components/Logo.vue'
+export default {
+  components: {},
 
-	export default {
-		components: {
-			Logo
-		},
-
-		created() {
-			this.$store.dispatch('chapter/FETCH_CHAPTERS')
-		}
-	}
+  created() {},
+}
 </script>
 
 <style>
-	/* Sample `apply` at-rules with Tailwind CSS
-	.container {
-	  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-	}
-	*/
-	.container {
-		margin: 0 auto;
-		min-height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-	}
-
-	.title {
-		font-family: 'Quicksand', 'Source Sans Pro', -apple-system,
-			BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-			sans-serif;
-		display: block;
-		font-weight: 300;
-		font-size: 100px;
-		color: #35495e;
-		letter-spacing: 1px;
-	}
-
-	.subtitle {
-		font-weight: 300;
-		font-size: 42px;
-		color: #526488;
-		word-spacing: 5px;
-		padding-bottom: 15px;
-	}
-
-	.links {
-		padding-top: 15px;
-	}
+/* Sample `apply` at-rules with Tailwind CSS */
+.container {
+  @apply min-h-screen flex flex-col justify-center items-center text-center mx-auto p-5;
+}
 </style>
