@@ -148,6 +148,21 @@ export default {
       if (this.selectedState != '-') {
         this.cities = getCities(this.selectedState)
       }
+      if (this.selectedState == 'Wp Kuala Lumpur') {
+        this.cities = [
+          'Bukit Bintang',
+          'Titiwangsa',
+          'Setiawangsa',
+          'Wangsa Maju',
+          'Batu',
+          'Kepong',
+          'Segambut',
+          'Lembah Pantai',
+          'Seputeh',
+          'Bandar Tun Razak',
+          'Cheras',
+        ]
+      }
       return '-'
     },
     changeStep(step) {

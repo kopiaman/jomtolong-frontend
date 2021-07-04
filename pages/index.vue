@@ -4,7 +4,24 @@
       <img src="/img/logofront.png" />
     </div>
 
-    <div
+    <p class="font-bold">Sila Pilih Kawasan Anda</p>
+    <div class="flex flex-col w-full lg:w-1/2">
+      <select class="input" v-model="selectedState" @change="getCitiesData()">
+        <option value="-">Negeri</option>
+        <option v-for="state in states" :key="state">{{ state }}</option>
+      </select>
+
+      <select class="input" v-model="selectedCity">
+        <option value="-">Kawasan</option>
+        <option v-for="city in cities" :key="city">{{ city }}</option>
+      </select>
+
+      <button class="button-primary" @click="$router.push('/donatees')">
+        Cari
+      </button>
+    </div>
+
+    <!-- <div
       class="
         w-full
         lg:w-1/2
@@ -66,8 +83,8 @@
         Anda ingin membuat sumbangan terus ke penerima
       </div>
       <img src="/img/icon-donate.png" class="h-12 ml-3" />
-    </div>
-    <div
+    </div> -->
+    <!-- <div
       class="
         w-full
         lg:w-1/2
@@ -87,17 +104,53 @@
         Daftar sebagai pemberi bantuan di kawasan anda
       </div>
       <img src="/img/icon-ngo.png" class="h-12 ml-3" />
-    </div>
-    <p class="w-full h-3 text-sm text-center">v.0.1.0</p>
+    </div> -->
+
+    <p class="w-full h-3 text-sm text-center mt-5">v.0.1.0</p>
   </div>
 </template>
 
 <script>
+import {
+  //   allPostcodes,
+  getStates,
+  getCities,
+  //   getPostcodes,
+  //   findPostcode,
+} from 'malaysia-postcodes'
 export default {
   layout: 'container',
-  components: {},
-
-  created() {},
+  data() {
+    return {
+      states: getStates(),
+      selectedState: '-',
+      cities: [],
+      selectedCity: '-',
+    }
+  },
+  methods: {
+    getCitiesData() {
+      if (this.selectedState != '-') {
+        this.cities = getCities(this.selectedState)
+      }
+      if (this.selectedState == 'Wp Kuala Lumpur') {
+        this.cities = [
+          'Bukit Bintang',
+          'Titiwangsa',
+          'Setiawangsa',
+          'Wangsa Maju',
+          'Batu',
+          'Kepong',
+          'Segambut',
+          'Lembah Pantai',
+          'Seputeh',
+          'Bandar Tun Razak',
+          'Cheras',
+        ]
+      }
+      return '-'
+    },
+  },
 }
 </script>
 

@@ -1,11 +1,67 @@
 <template>
   <div class="container">
-    <div class="mb-3 flex flex-center">
-      <img
-        src="/img/logo.png"
-        class="h-10 clickable"
-        @click="$router.push('/')"
-      />
+    <div
+      class="
+        mb-3
+        flex
+        justify-between
+        items-center
+        bg-gray-200
+        p-2
+        border-radius-10
+      "
+    >
+      <div class="lg:w-2/3">
+        <img
+          src="/img/logo.png"
+          class="h-12 clickable"
+          @click="$router.push('/')"
+        />
+      </div>
+
+      <div class="flex hide-mobile">
+        <div
+          class="
+            w-1/2
+            bg-green-200
+            border
+            rounded-lg
+            border-green-200
+            p-2
+            px-4
+            inline-flex
+            items-center
+            m-1
+            clickable
+          "
+          @click="$router.push('/donatees/apply')"
+        >
+          <img src="/img/icon-flag-me.png" class="h-12 mr-3" />
+          <div class="text-xs font-bold text-left">
+            Isi Borang Bantuan <br />(diri sendiri/ orang lain)
+          </div>
+        </div>
+        <div
+          class="
+            w-1/2
+            bg-green-500
+            border
+            rounded-lg
+            border-green-200
+            p-2
+            px-4
+            inline-flex
+            items-center
+            m-1
+            clickable
+          "
+        >
+          <div class="text-xs font-bold text-left w-2/3">
+            Daftar sebagai pemberi bantuan di kawasan anda
+          </div>
+          <img src="/img/icon-ngo.png" class="h-12 ml-3" />
+        </div>
+      </div>
     </div>
 
     <nuxt />
