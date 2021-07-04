@@ -16,7 +16,9 @@
         items-center
         m-1
         px-5
+        clickable
       "
+      @click="$router.push('/donatees/apply')"
     >
       <img src="/img/icon-flag-me.png" class="h-12 mr-3" />
       <div class="text-sm text-left">Permohonan bantuan untuk diri sendiri</div>
@@ -33,6 +35,7 @@
         items-center
         m-1
         px-5
+        clickable
       "
     >
       <img src="/img/icon-flag-others.png" class="h-12 mr-3" />
@@ -73,6 +76,7 @@
         items-center
         m-1
         px-5
+        clickable
       "
     >
       <div class="text-sm text-left w-2/3">

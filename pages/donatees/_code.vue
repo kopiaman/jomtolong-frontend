@@ -1,11 +1,6 @@
 <template>
   <div>
-    <div class="flex items-center pb-3">
-      <div class="w-5 mr-2 clickable" @click="$router.back()">
-        <img src="/svg/left-arrow.svg" />
-      </div>
-      <h1 class="text-xl font-bold">Maklumat Penerima</h1>
-    </div>
+    <TitleBack title="Maklumat Lanjut" />
 
     <div class="bg-gray-300 h-56 flex flex-center p-5 leading-loose -mx-5">
       Saya telah hilang pekerjaan sejak PKP 1.0. Tidak cukup pembelanjaan untuk
@@ -98,7 +93,12 @@
 </template>
 
 <script>
-export default {}
+import TitleBack from '~/components/shared/TitleBack.vue'
+export default {
+  components: {
+    TitleBack,
+  },
+}
 </script>
 
 <style>

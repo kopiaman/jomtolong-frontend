@@ -3,3 +3,18 @@
 @import 'tailwindcss/components';
 /* purgecss end ignore */
 @import 'tailwindcss/utilities';
+
+.input {
+  @apply border p-3 m-1 h-12 w-full rounded-lg text-xs border-gray-500;
+}
+.textarea {
+  @apply border p-3 m-1  w-full rounded-lg text-xs border-gray-500;
+}
+
+.button {
+  @apply border p-3 m-1 h-12 w-full rounded-lg;
+}
+
+.button-primary {
+  @apply border p-3 m-1 h-12 w-full rounded-lg bg-green-500;
+}
