@@ -2,7 +2,7 @@
   <div>
     <title-back title="Permohonan Bantuan" />
 
-    <div class="hide" id="step1">
+    <div :class="currentStep == '1' ? 'show' : 'hide'" id="step1">
       <input class="input" placeholder="Nama Penerima (tidak dipaparkan" />
 
       <input class="input" placeholder="No Tel/ Whatsapp Penerima" />
@@ -52,10 +52,12 @@
         </div>
       </div>
 
-      <button class="bg-green-500 button-primary mt-5">SETERUSNYA</button>
+      <button class="bg-green-500 button-primary mt-5" @click="changeStep(2)">
+        SETERUSNYA
+      </button>
     </div>
 
-    <div class="" id="step2">
+    <div :class="currentStep == '2' ? 'show' : 'hide'" id="step2">
       <h2 class="font-bold">Review Permohonan</h2>
       <ol class="text-xs leading-loose list-decimal pl-4 mt-4">
         <li>Saya mengaku bahawa maklumat penerima bantuan adalah benar</li>
@@ -83,7 +85,37 @@
         >
       </div>
 
-      <button class="button-primary mt-5">HANTAR</button>
+      <button class="button-primary mt-5" @click="submitForm()">HANTAR</button>
+    </div>
+
+    <div
+      :class="formStatus == 'success' && currentStep == '3' ? 'show' : 'hide'"
+      id="step3"
+      class="p-5 text-center border border-radius-10 flex flex-col flex-center"
+    >
+      <img src="/img/icon-tick.png" class="h-24" />
+      <h2 class="font-bold py-3">Permohonan Diterima</h2>
+
+      <p>Pihak admin akan membuat pengesahan sebelum permohonan diluluskan</p>
+
+      <button class="button-primary my-3" @click="$router.push('/')">
+        KEMBALI KE MUKA UTAMA
+      </button>
+    </div>
+
+    <div
+      :class="formStatus == 'failed' && currentStep == '3' ? 'show' : 'hide'"
+      id="step3"
+      class="p-5 text-center border border-radius-10 flex flex-col flex-center"
+    >
+      <img src="/svg/error.svg" class="h-24" />
+      <h2 class="font-bold py-3">Teknikal Error</h2>
+
+      <p>Ada masalah teknikal. Sila hubungi admin</p>
+
+      <button class="button-primary my-3" @click="$router.push('/')">
+        KEMBALI KE MUKA UTAMA
+      </button>
     </div>
   </div>
 </template>
@@ -107,6 +139,8 @@ export default {
       selectedState: '-',
       cities: [],
       selectedCity: '-',
+      currentStep: '1',
+      formStatus: '',
     }
   },
   methods: {
@@ -115,6 +149,13 @@ export default {
         this.cities = getCities(this.selectedState)
       }
       return '-'
+    },
+    changeStep(step) {
+      this.currentStep = step
+    },
+    submitForm() {
+      this.currentStep = 3
+      this.formStatus = 'failed'
     },
   },
 }
