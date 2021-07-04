@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="flex items-center">
-      <div class="w-5 mr-2">
+    <div class="flex items-center pb-3">
+      <div class="w-5 mr-2 clickable" @click="$router.back()">
         <img src="/svg/left-arrow.svg" />
       </div>
       <h1 class="text-xl font-bold">Maklumat Penerima</h1>

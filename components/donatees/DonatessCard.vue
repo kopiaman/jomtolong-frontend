@@ -1,6 +1,7 @@
 <template>
   <div
     class="
+      clickable
       position-relative
       h-40
       bg-white

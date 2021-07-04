@@ -1,8 +1,9 @@
 <template>
-  <div class="container">
-    <div class="mb-12">
+  <div class="h-screen flex flex-col flex-center">
+    <div class="mb-12 flex justify-center">
       <img src="/img/logofront.png" />
     </div>
+
     <div
       class="
         w-full
@@ -85,6 +86,7 @@
 
 <script>
 export default {
+  layout: 'container',
   components: {},
 
   created() {},
