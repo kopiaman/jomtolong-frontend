@@ -1,140 +1,130 @@
-/**
+/***********************************----------------------
  *
- * PX HEIGHT
+ * FOR ALL
  *
  */
-.h-auto{
+@each $height in '10', '15', '20', '30', '35', '40', '50', '60', '70', '80',
+  '90', '100', '150', '200', '250', '300', 350, 400, 500, 600, 700, 800, 900,
+  1000
+{
+  .h-#{$height}px {
+    height: #{$height}px;
+  }
+}
+
+@each $height in '10', '20', '30', '40', '50', '60', '70', '80', '90', '100',
+  '150', '200', '250', '300', 350, 400, 500, 600, 700
+{
+  .h-min-#{$height} {
+    min-height: #{$height}px;
+  }
+}
+
+@each $height in '10', '20', '30', '40', '50', '60', '70', '80', '90', '100' {
+  .h-#{$height}vh {
+    height: #{$height}vh;
+  }
+}
+
+@each $height in '10', '20', '30', '40', '50', '60', '70', '80', '90', '100' {
+  .h-min-#{$height}vh {
+    min-height: #{$height}vh;
+  }
+}
+
+@each $height in 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 {
+  .h-#{$height}pc {
+    height: percentage($height);
+  }
+}
+
+@each $height in '10', '20', '30', '40', '50', '60', '70', '80', '90', '100',
+  '150', '200', '250', 300, 350, 400, 500, 600, 700
+{
+  .h-max-#{$height} {
+    max-height: #{$height}px;
+  }
+}
+
+@each $height in '10', '20', '30', '40', '50', '60', '70', '80', '90', '100' {
+  .h-max-#{$height}vh {
+    max-height: #{$height}vh;
+  }
+}
+
+/***********************************----------------------
+*
+* MOBILE SETTING
+*
+*/
+
+.h-auto-mobile {
+  @include xs {
+    height: auto;
+  }
+}
+
+@each $height in '10', '20', '30', '40', '50', '60', '70', '80', '90', '100',
+  '150', '200', '250', '300', 350, 400, 450, 500
+{
+  .h-#{$height}-mobile {
+    @include xs {
+      height: #{$height}px;
+    }
+  }
+}
+@each $height in 50, 100, 200, 300 {
+  .h-min-#{$height}-mobile {
+    @include xs {
+      min-height: #{$height}px;
+    }
+  }
+}
+
+@each $height in '10', '20', '30', '40', '50', '60', '70', '80', '90', '100' {
+  .h-#{$height}vh-mobile {
+    @include xs {
+      height: #{$height}vh;
+    }
+  }
+}
+
+/**********************************----------------------
+*
+* TABLET SETTING
+*
+*/
+
+.h-auto-tablet {
+  @include md {
+    height: auto;
+  }
+}
+
+@each $height in '10', '20', '30', '40', '50', '60', '70', '80', '90', '100',
+  '150', '200', '250', '300', 350, 400, 450, 500
+{
+  .h-#{$height}-tablet {
+    @include md {
+      height: #{$height}px;
+    }
+  }
+}
+
+@each $height in '10', '20', '30', '40', '50', '60', '70', '80', '90', '100' {
+  .h-#{$height}vh-tablet {
+    @include md {
+      height: #{$height}vh;
+    }
+  }
+}
+
+// others
+.responsive {
+  width: 100%;
   height: auto;
 }
 
-@each $height in '10' ,'20', '30','40','50','60','70','80','90','100','150','200','250','300',350,400,500,550,600,700,800 {
-    .h-#{$height} {
-        height: #{$height}px;
-    }
-}
-
-/**
- *
- * PX- MIN HEIGHT
- * .h-10px, .h-20px
- */
-@each $height in '10' ,'20', '30','40','50','60','70','80','90','100','150','200','250',300,350,400,500,600,700,800 {
-    .h-min-#{$height} {
-        min-height: #{$height}px;
-    }
-}
-
-/**
- *
- * PX- MAX HEIGHT
- * .h-max-500, .h-max-200
- */
-@each $height in '10' ,'20', '30','40','50','60','70','80','90','100','150','200','250',300,350,400,500,600,700,800 {
-    .h-max-#{$height} {
-        max-height: #{$height}px;
-    }
-}
-
-
-/**
- *
- * VH - HEIGHT
- * .h-100vh, h-50vh
- */
- @each $height in '10' ,'20', '30','40','50','60','70','80','90','100' {
-    .h-#{$height}vh {
-        height: #{$height}vh;
-    }
-}
-
-
-/**
- *
- * VH MIN HEIGHT
- * .h-min-50vh...
- */
-@each $height in '10' ,'20', '30','40','50','60','70','80','90','100' {
-    .h-min-#{$height}vh {
-        min-height: #{$height}vh;
-    }
-}
-
-
-
-/***********************************----------------------
- *
- * MOBILE SETTING
- *
- */
-
-
-
-.h-auto-mobile{
-  @include xs{
-    height: auto;
-  }
-}
-
-@each $height in '10' ,'20', '30','40','50','60','70','80','90','100','150','200','250','300',350,400,450,500 {
-    .h-#{$height}-mobile {
-      @include xs{
-        height: #{$height}px;
-      }
-    }
-}
-
-@each $height in '10' ,'20', '30','40','50','55','60','70','80','90','100' {
-    .h-#{$height}vh-mobile {
-      @include xs{
-        height: #{$height}vh;
-      }
-    }
-}
-
-
-
-
-/**********************************----------------------
- *
- * TABLET SETTING
- *
- */
-
-
-.h-auto-tablet{
-  @include md{
-    height: auto;
-  }
-}
-
-
-@each $height in '10' ,'20', '30','40','50','60','70','80','90','100','150','200','250','300',350,400,450,500 {
-    .h-#{$height}-tablet {
-      @include md{
-        height: #{$height}px;
-      }
-    }
-}
-
-@each $height in '10' ,'20', '30','40','50','60','70','80','90','100' {
-    .h-#{$height}vh-tablet {
-      @include md{
-        height: #{$height}vh;
-      }
-    }
-}
-
-
-// special
-
-
-.h-calon{
-  @include xs{
-      height: calc(80vh - 5em);
-  } 
-}
-
-
-.h-bottom-bar{
-  height: 5em;
+.h-auto {
+  height: auto;
 }

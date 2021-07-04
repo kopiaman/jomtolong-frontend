@@ -17,64 +17,21 @@
       </div>
     </div>
 
-    <div class="text-gray-700 py-3">Terdapat 90 rekod</div>
+    <div class="text-gray-700 py-2 text-xs">Terdapat 90 rekod</div>
 
-    <div
-      class="
-        position-relative
-        h-48
-        bg-white
-        border
-        rounded-lg
-        border-gray-300
-        p-4
-        m-1
-      "
-    >
-      <p class="text-xl font-bold text-left">NUR931</p>
-      <div class="flex mb-2">
-        <img class="w-5 mr-2" src="/img/icon-location.png" />
-        <p class="text-sm">Puchong ~ 2km</p>
-      </div>
-      <div class="flex">
-        <img class="w-5 mr-2" src="/img/icon-help.png" />
-        <p class="text-sm">Keperluan asas, makanan</p>
-      </div>
-      <div class="w-full position-absolute position-bottom-right pr-2 pb-2">
-        <p class="text-xs text-right">10 minit lalu</p>
-      </div>
-    </div>
-    <div
-      class="
-        position-relative
-        h-48
-        bg-white
-        border
-        rounded-lg
-        border-gray-300
-        p-4
-        m-1
-      "
-    >
-      <p class="text-xl font-bold text-left">NUR931</p>
-      <div class="flex mb-2">
-        <img class="w-5 mr-2" src="/img/icon-location.png" />
-        <p class="text-sm">Puchong ~ 2km</p>
-      </div>
-      <div class="flex">
-        <img class="w-5 mr-2" src="/img/icon-help.png" />
-        <p class="text-sm">Keperluan asas, makanan</p>
-      </div>
-      <div class="w-full position-absolute position-bottom-right pr-2 pb-2">
-        <p class="text-xs text-right">10 minit lalu</p>
-      </div>
-    </div>
+    <DonatessCard />
+    <DonatessCard />
+    <DonatessCard />
   </div>
 </template>
 
 <script>
-export default {}
+import DonatessCard from '../../components/donatees/DonatessCard.vue'
+
+export default {
+  components: { DonatessCard },
+}
 </script>
 
-<style>
-</style>
+
+
