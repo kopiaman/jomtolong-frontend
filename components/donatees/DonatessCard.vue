@@ -10,6 +10,7 @@
       p-4
       m-1
     "
+    @click="gotopage()"
   >
     <div
       class="
@@ -49,7 +50,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    gotopage() {
+      this.$router.push('/donatees/nur31')
+    },
+  },
+}
 </script>
 
 <style>
