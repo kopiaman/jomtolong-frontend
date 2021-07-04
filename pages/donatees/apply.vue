@@ -2,56 +2,89 @@
   <div>
     <title-back title="Permohonan Bantuan" />
 
-    <input class="input" placeholder="Nama Penerima (tidak dipaparkan" />
+    <div class="hide" id="step1">
+      <input class="input" placeholder="Nama Penerima (tidak dipaparkan" />
 
-    <input class="input" placeholder="No Tel/ Whatsapp Penerima" />
+      <input class="input" placeholder="No Tel/ Whatsapp Penerima" />
 
-    <select class="input" v-model="selectedState" @change="getCitiesData()">
-      <option value="-">Negeri</option>
-      <option v-for="state in states" :key="state">{{ state }}</option>
-    </select>
+      <select class="input" v-model="selectedState" @change="getCitiesData()">
+        <option value="-">Negeri</option>
+        <option v-for="state in states" :key="state">{{ state }}</option>
+      </select>
 
-    <select class="input" v-model="selectedCity">
-      <option value="-">Daerah</option>
-      <option v-for="city in cities" :key="city">{{ city }}</option>
-    </select>
+      <select class="input" v-model="selectedCity">
+        <option value="-">Bandar</option>
+        <option v-for="city in cities" :key="city">{{ city }}</option>
+      </select>
 
-    <textarea
-      class="textarea"
-      rows="5"
-      placeholder="Ringkasan Situasi penerima, bantuan yang diperlukan secara spesifik"
-    >
-    </textarea>
+      <textarea
+        class="textarea"
+        rows="5"
+        placeholder="Ringkasan Situasi penerima, bantuan yang diperlukan secara spesifik"
+      >
+      </textarea>
 
-    <div>Kategori Bantuan diperlukan</div>
-    <div class="flex flex-wrap">
-      <div class="flex items-center text-xs w-1/2">
-        <input type="checkbox" class="mr-2" />
-        <label>Makanan </label>
+      <div>Kategori Bantuan diperlukan</div>
+      <div class="flex flex-wrap">
+        <div class="flex items-center text-xs w-1/2">
+          <input type="checkbox" class="mr-2" />
+          <label>Makanan </label>
+        </div>
+        <div class="flex items-center text-xs w-1/2">
+          <input type="checkbox" class="mr-2" />
+          <label>Pakaian</label>
+        </div>
+        <div class="flex items-center text-xs w-1/2">
+          <input type="checkbox" class="mr-2" />
+          <label>Tempat Tinggal</label>
+        </div>
+        <div class="flex items-center text-xs w-1/2">
+          <input type="checkbox" class="mr-2" />
+          <label>Pendidikan</label>
+        </div>
+        <div class="flex items-center text-xs w-1/2">
+          <input type="checkbox" class="mr-2" />
+          <label>Kesihatan</label>
+        </div>
+        <div class="flex items-center text-xs w-1/2">
+          <input type="checkbox" class="mr-2" />
+          <label>Lain-Lain</label>
+        </div>
       </div>
-      <div class="flex items-center text-xs w-1/2">
-        <input type="checkbox" class="mr-2" />
-        <label>Pakaian</label>
-      </div>
-      <div class="flex items-center text-xs w-1/2">
-        <input type="checkbox" class="mr-2" />
-        <label>Tempat Tinggal</label>
-      </div>
-      <div class="flex items-center text-xs w-1/2">
-        <input type="checkbox" class="mr-2" />
-        <label>Pendidikan</label>
-      </div>
-      <div class="flex items-center text-xs w-1/2">
-        <input type="checkbox" class="mr-2" />
-        <label>Kesihatan</label>
-      </div>
-      <div class="flex items-center text-xs w-1/2">
-        <input type="checkbox" class="mr-2" />
-        <label>Lain-Lain</label>
-      </div>
+
+      <button class="bg-green-500 button-primary mt-5">SETERUSNYA</button>
     </div>
 
-    <button class="bg-green-500 button-primary mt-5">SETERUSNYA</button>
+    <div class="" id="step2">
+      <h2 class="font-bold">Review Permohonan</h2>
+      <ol class="text-xs leading-loose list-decimal pl-4 mt-4">
+        <li>Saya mengaku bahawa maklumat penerima bantuan adalah benar</li>
+        <li>
+          Saya berjanji tidak akan menyalah guna bantuan yang diberikan seperti
+          menjual semula barangan bantuan kepada orang lain
+        </li>
+        <li>
+          Saya memberi kebenaran untuk dihubungi secara langsung oleh penderma/
+          sukarelawan
+        </li>
+        <li>
+          Rekod bantuan ini akan dipaparkan selama 7 hari dari kelulusan secara
+          automatik
+        </li>
+        <li>
+          Saya akan memaklumkan admin sekiranya bantuan diterima dan mencukupi
+        </li>
+      </ol>
+
+      <div class="flex items-center mt-4">
+        <input type="checkbox" class="mr-3" />
+        <label class="text-xs font-bold"
+          >Saya bersetuju dengan syarat dan peraturan am seperti di atas</label
+        >
+      </div>
+
+      <button class="button-primary mt-5">HANTAR</button>
+    </div>
   </div>
 </template>
 
