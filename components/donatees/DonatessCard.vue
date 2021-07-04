@@ -1,51 +1,51 @@
 <template>
-  <div
-    class="
-      clickable
-      position-relative
-      h-40
-      bg-white
-      border
-      rounded-lg
-      border-gray-400
-      p-4
-      m-1
-    "
-    @click="gotopage()"
-  >
+  <div class="w-full lg:w-1/3 p-2" @click="gotopage()">
     <div
       class="
-        bg-green-300
-        position-absolute position-top-right
-        mt-2
-        mr-2
-        px-3
-        py-1
-        text-xs
-        border-radius-5
+        clickable
+        position-relative
+        h-40
+        bg-white
+        border
+        rounded-lg
+        border-gray-400
+        p-4
       "
     >
-      SELESAI
-    </div>
-
-    <p class="text-xl font-bold text-left">NUR931</p>
-
-    <div class="flex mb-2">
-      <div class="w-4 mr-2">
-        <img class="" src="/img/icon-location.png" />
+      <div
+        class="
+          bg-green-300
+          position-absolute position-top-right
+          mt-2
+          mr-2
+          px-3
+          py-1
+          text-xs
+          border-radius-5
+        "
+      >
+        SELESAI
       </div>
-      <p class="text-xs">Puchong ~ 2km</p>
-    </div>
 
-    <div class="flex">
-      <div class="w-4 mr-2">
-        <img class="" src="/img/icon-help.png" />
+      <p class="text-xl font-bold text-left">NUR931</p>
+
+      <div class="flex mb-2">
+        <div class="w-4 mr-2">
+          <img class="" src="/img/icon-location.png" />
+        </div>
+        <p class="text-xs">Puchong ~ 2km</p>
       </div>
-      <p class="text-xs">Keperluan asas, makanan</p>
-    </div>
 
-    <div class="w-full position-absolute position-bottom-right pr-2 pb-2">
-      <p class="text-xs text-right">10 minit lalu</p>
+      <div class="flex">
+        <div class="w-4 mr-2">
+          <img class="" src="/img/icon-help.png" />
+        </div>
+        <p class="text-xs">Keperluan asas, makanan</p>
+      </div>
+
+      <div class="w-full position-absolute position-bottom-right pr-2 pb-2">
+        <p class="text-xs text-right">10 minit lalu</p>
+      </div>
     </div>
   </div>
 </template>

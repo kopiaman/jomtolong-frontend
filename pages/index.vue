@@ -7,6 +7,7 @@
     <div
       class="
         w-full
+        lg:w-1/2
         bg-white
         border
         rounded-lg
@@ -26,6 +27,7 @@
     <div
       class="
         w-full
+        lg:w-1/2
         bg-white
         border
         rounded-lg
@@ -46,6 +48,7 @@
     <div
       class="
         w-full
+        lg:w-1/2
         bg-green-300
         border
         rounded-lg
@@ -67,6 +70,7 @@
     <div
       class="
         w-full
+        lg:w-1/2
         bg-green-500
         border
         rounded-lg
@@ -97,5 +101,3 @@ export default {
 }
 </script>
 
-<style>
-</style>
