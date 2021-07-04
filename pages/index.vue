@@ -51,7 +51,9 @@
         items-center
         m-1
         px-5
+        clickable
       "
+      @click="$router.push('/donatees')"
     >
       <div class="text-sm text-left w-2/3">
         Anda ingin membuat sumbangan terus ke penerima
@@ -90,8 +92,4 @@ export default {
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS */
-.container {
-  @apply min-h-screen flex flex-col justify-center items-center text-center mx-auto p-5;
-}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <nuxt />
   </div>
 </template>
@@ -23,5 +23,10 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+/* Sample `apply` at-rules with Tailwind CSS */
+.container {
+  @apply min-h-screen  mx-auto p-5;
 }
 </style>
