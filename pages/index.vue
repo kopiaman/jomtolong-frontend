@@ -16,7 +16,7 @@
         <option v-for="city in cities" :key="city">{{ city }}</option>
       </select>
 
-      <button class="button-primary" @click="$router.push('/donatees')">
+      <button class="button-primary" @click="$router.push('/pemohon')">
         Cari
       </button>
     </div>

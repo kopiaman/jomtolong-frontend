@@ -34,11 +34,11 @@
             m-1
             clickable
           "
-          @click="$router.push('/donatees/apply')"
+          @click="$router.push('/pemohon/borang')"
         >
           <img src="/img/icon-flag-me.png" class="h-12 mr-3" />
           <div class="text-xs font-bold text-left">
-            Isi Borang Bantuan <br />(diri sendiri/ orang lain)
+            Mohon Bantuan <br />(diri sendiri/ orang lain)
           </div>
         </div>
         <div
@@ -55,9 +55,10 @@
             m-1
             clickable
           "
+          @click="$router.push('/pusatbantuan/borang')"
         >
           <div class="text-xs font-bold text-left w-2/3">
-            Daftar sebagai pemberi bantuan di kawasan anda
+            Daftar Pusat Bantuan/ Food Bank di kawasan anda
           </div>
           <img src="/img/icon-ngo.png" class="h-12 ml-3" />
         </div>

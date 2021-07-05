@@ -54,7 +54,7 @@
 export default {
   methods: {
     gotopage() {
-      this.$router.push('/donatees/nur31')
+      this.$router.push('/pemohon/nur31')
     },
   },
 }

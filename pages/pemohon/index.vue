@@ -19,17 +19,17 @@
     <div class="text-gray-700 py-2 text-xs">Terdapat 90 rekod</div>
 
     <div class="flex flex-wrap">
-      <DonatessCard />
-      <DonatessCard />
-      <DonatessCard />
-      <DonatessCard />
-      <DonatessCard />
+      <PemohonCard />
+      <PemohonCard />
+      <PemohonCard />
+      <PemohonCard />
+      <PemohonCard />
     </div>
   </div>
 </template>
 
 <script>
-import DonatessCard from '../../components/donatees/DonatessCard.vue'
+import PemohonCard from '../../components/pemohon/PemohonCard.vue'
 import {
   //   allPostcodes,
   getStates,
@@ -38,7 +38,7 @@ import {
   //   findPostcode,
 } from 'malaysia-postcodes'
 export default {
-  components: { DonatessCard },
+  components: { PemohonCard },
   data() {
     return {
       states: getStates(),

@@ -5,10 +5,10 @@
 @import 'tailwindcss/utilities';
 
 .input {
-  @apply border p-3 m-1 h-12 w-full rounded-lg text-xs border-gray-500;
+  @apply border p-3 m-1 h-12 w-full rounded-lg text-xs border-gray-500 text-gray-600;
 }
 .textarea {
-  @apply border p-3 m-1  w-full rounded-lg text-xs border-gray-500;
+  @apply border p-3 m-1  w-full rounded-lg text-xs border-gray-500 text-gray-600;
 }
 
 .button {
@@ -17,4 +17,8 @@
 
 .button-primary {
   @apply border p-3 m-1 h-12 w-full rounded-lg bg-green-500;
+}
+
+h1 {
+  @apply text-xl font-bold text-green-600;
 }

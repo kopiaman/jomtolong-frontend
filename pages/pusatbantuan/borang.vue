@@ -1,30 +1,42 @@
 <template>
   <div>
-    <title-back title="Permohonan Bantuan" />
+    <h1>Daftar Pusat Bantuan</h1>
 
     <div :class="currentStep == '1' ? 'show' : 'hide'" id="step1">
-      <input class="input" placeholder="Nama Penerima (tidak dipaparkan" />
+      <input class="input" placeholder="Nama Organisasi/Individu" />
+      <input class="input" placeholder="No Tel Untuk Dihubungi" />
 
-      <input class="input" placeholder="No Tel/ Whatsapp Penerima" />
-
-      <select class="input" v-model="selectedState" @change="getCitiesData()">
-        <option value="-">Negeri</option>
-        <option v-for="state in states" :key="state">{{ state }}</option>
-      </select>
-
-      <select class="input" v-model="selectedCity">
-        <option value="-">Bandar</option>
-        <option v-for="city in cities" :key="city">{{ city }}</option>
-      </select>
+      <div class="text-xs ml-1 mt-2">Alamat</div>
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/3 lg:p-1">
+          <input class="input" placeholder="No. Unit, Nama Jalan" />
+        </div>
+        <div class="w-full lg:w-1/3 lg:p-1">
+          <select
+            class="input"
+            v-model="selectedState"
+            @change="getCitiesData()"
+          >
+            <option value="-">Negeri</option>
+            <option v-for="state in states" :key="state">{{ state }}</option>
+          </select>
+        </div>
+        <div class="w-full lg:w-1/3 lg:p-1">
+          <select class="input" v-model="selectedCity">
+            <option value="-">Daerah</option>
+            <option v-for="city in cities" :key="city">{{ city }}</option>
+          </select>
+        </div>
+      </div>
 
       <textarea
-        class="textarea"
+        class="textarea mt-2"
         rows="5"
-        placeholder="Ringkasan Situasi penerima, bantuan yang diperlukan secara spesifik"
+        placeholder="Info ringkas seperti senarai bantuan disediakan, kapasiti, syarat am dan lain-lain"
       >
       </textarea>
 
-      <div>Kategori Bantuan diperlukan</div>
+      <div class="font-bold">Kategori Bantuan Disediakan</div>
       <div class="flex flex-wrap">
         <div class="flex items-center text-xs w-1/2">
           <input type="checkbox" class="mr-2" />
@@ -40,7 +52,7 @@
         </div>
         <div class="flex items-center text-xs w-1/2">
           <input type="checkbox" class="mr-2" />
-          <label>Pendidikan</label>
+          <label>Pembelajaran</label>
         </div>
         <div class="flex items-center text-xs w-1/2">
           <input type="checkbox" class="mr-2" />
@@ -131,7 +143,7 @@ import {
 } from 'malaysia-postcodes'
 
 export default {
-  name: 'ApplyDonatees',
+  name: 'BorangPusatBantuan',
   components: { TitleBack },
   data() {
     return {
