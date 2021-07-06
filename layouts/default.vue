@@ -1,17 +1,17 @@
 <template>
   <div>
-    <div class="container">
-      <div
-        class="
-          mb-3
-          flex
-          justify-between
-          items-center
-          bg-gray-200
-          p-2
-          border-radius-10
-        "
-      >
+    <div
+      class="
+        mb-3
+        flex
+        justify-between
+        items-center
+        bg-gray-200
+        p-2
+        border-radius-10
+      "
+    >
+      <div class="px-5 flex items-center justify-between w-full">
         <div class="lg:w-2/3">
           <img
             src="/img/logo.png"
@@ -20,11 +20,12 @@
           />
         </div>
 
-        <div class="flex hide-mobile">
+        <!-- quick button -->
+        <div class="w-1/3 flex hide-mobile">
           <div
             class="
-              w-1/2
-              bg-green-200
+              w-full
+              bg-indigo-600
               border
               rounded-lg
               border-green-200
@@ -36,15 +37,17 @@
               clickable
             "
             @click="$router.push('/pemohon/borang')"
+            v-if="$route.path == '/pemohon'"
           >
             <img src="/img/icon-flag-me.png" class="h-12 mr-3" />
-            <div class="text-xs font-bold text-left">
+            <div class="text-xs font-bold text-left text-white">
               Mohon Bantuan <br />(diri sendiri/ orang lain)
             </div>
           </div>
+
           <div
             class="
-              w-1/2
+              w-full
               bg-green-500
               border
               rounded-lg
@@ -57,6 +60,7 @@
               clickable
             "
             @click="$router.push('/pusatbantuan/borang')"
+            v-if="$route.path == '/pusatbantuan'"
           >
             <div class="text-xs font-bold text-left w-2/3">
               Daftar Pusat Bantuan/ Food Bank di kawasan anda
@@ -65,6 +69,9 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="container">
       <nuxt />
     </div>
     <!-- footer -->

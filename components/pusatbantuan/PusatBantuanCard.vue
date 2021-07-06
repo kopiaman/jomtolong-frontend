@@ -2,6 +2,7 @@
   <div class="w-full lg:w-1/3 p-2" @click="gotopage()">
     <div
       class="
+        clickable
         position-relative
         h-40
         bg-white
