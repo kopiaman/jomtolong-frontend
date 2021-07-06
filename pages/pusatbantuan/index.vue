@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Senarai Pusat Bantuan/ Food Bank</h1>
+    <h1>Senarai Pusat Bantuan</h1>
 
     <div class="flex">
       <select class="input" v-model="selectedState" @change="getCitiesData()">
