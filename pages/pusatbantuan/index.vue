@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Senarai Pemohon Bantuan</h1>
+    <h1>Senarai Pusat Bantuan/ Food Bank</h1>
 
     <div class="flex">
       <select class="input" v-model="selectedState" @change="getCitiesData()">
@@ -17,17 +17,17 @@
     <div class="text-gray-700 py-2 text-xs">Terdapat 90 rekod</div>
 
     <div class="flex flex-wrap">
-      <PemohonCard />
-      <PemohonCard />
-      <PemohonCard />
-      <PemohonCard />
-      <PemohonCard />
+      <PusatBantuanCard />
+      <PusatBantuanCard />
+      <PusatBantuanCard />
+      <PusatBantuanCard />
+      <PusatBantuanCard />
     </div>
   </div>
 </template>
 
 <script>
-import PemohonCard from '../../components/pemohon/PemohonCard.vue'
+import PusatBantuanCard from '../../components/pusatbantuan/PusatBantuanCard.vue'
 import {
   //   allPostcodes,
   getStates,
@@ -36,7 +36,7 @@ import {
   //   findPostcode,
 } from 'malaysia-postcodes'
 export default {
-  components: { PemohonCard },
+  components: { PusatBantuanCard },
   data() {
     return {
       states: getStates(),

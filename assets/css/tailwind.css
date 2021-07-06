@@ -4,6 +4,9 @@
 /* purgecss end ignore */
 @import 'tailwindcss/utilities';
 
+.container {
+  @apply min-h-screen  mx-auto p-5 pb-20;
+}
 .input {
   @apply border p-3 m-1 h-12 w-full rounded-lg text-xs border-gray-500 text-gray-600;
 }

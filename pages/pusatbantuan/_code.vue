@@ -1,10 +1,20 @@
 <template>
   <div>
-    <TitleBack title="Maklumat NUR91" />
+    <TitleBack title="PETRONAS BSP" />
 
-    <div class="bg-gray-300 h-56 flex flex-center p-5 leading-loose -mx-5">
-      Saya telah hilang pekerjaan sejak PKP 1.0. Tidak cukup pembelanjaan untuk
-      menyara anak
+    <div
+      class="
+        bg-gray-300
+        h-56
+        flex flex-center
+        p-5
+        leading-loose
+        -mx-5
+        border-radius-10
+      "
+    >
+      Kami menyediakan 100 pack makanan setiap hari untuk sesiapa yang
+      memerlukan
     </div>
 
     <div
@@ -16,6 +26,8 @@
         border-gray-400
         p-4
         m-1
+        lg:w-1/2
+        w-full
       "
       style="top: -20px"
     >
@@ -31,24 +43,24 @@
           border-radius-5
         "
       >
-        SELESAI
+        Makanan
       </div>
 
-      <p class="text-xl font-bold text-left">NUR931</p>
+      <p class="text-xl font-bold text-left">PETRONAS BSP</p>
 
       <div class="flex mb-2">
         <div class="w-4 mr-2">
           <img class="" src="/img/icon-location.png" />
         </div>
-        <p class="text-xs">Puchong ~ 2km</p>
+        <p class="text-xs">Jalan SP/4, Jenjarom ~ 2km</p>
       </div>
 
-      <div class="flex">
+      <!-- <div class="flex">
         <div class="w-4 mr-2">
           <img class="" src="/img/icon-help.png" />
         </div>
         <p class="text-xs">Keperluan asas, makanan</p>
-      </div>
+      </div> -->
 
       <div
         class="
@@ -95,6 +107,7 @@
 <script>
 import TitleBack from '~/components/shared/TitleBack.vue'
 export default {
+  name: 'PusatBantuanDetail',
   components: {
     TitleBack,
   },
