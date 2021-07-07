@@ -19,7 +19,7 @@
         Makanan
       </div> -->
 
-      <p class="text-xl font-bold text-left">PETRONAS BSPs</p>
+      <p class="text-xl font-bold text-left text-green-500">PETRONAS BSPs</p>
 
       <div class="flex mb-2">
         <div class="w-4 mr-2">

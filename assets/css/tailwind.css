@@ -27,7 +27,7 @@
 }
 
 .button-secondary {
-  @apply bg-white border border-green-200 rounded-lg p-3 m-1 h-12 w-full flex justify-center text-center cursor-pointer;
+  @apply border border-green-500 rounded-lg p-3 m-1 h-12 w-full flex justify-center text-center cursor-pointer;
 }
 
 .tag {
@@ -35,7 +35,7 @@
 }
 
 h1 {
-  @apply text-xl font-bold text-green-600;
+  @apply text-xl font-bold text-green-700;
 }
 
 h2 {

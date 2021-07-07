@@ -12,22 +12,11 @@
         p-4
       "
     >
-      <div
-        class="
-          bg-green-300
-          position-absolute position-top-right
-          mt-2
-          mr-2
-          px-3
-          py-1
-          text-xs
-          border-radius-5
-        "
-      >
-        SELESAI
+      <div class="bg-green-300 position-absolute position-top-right tag">
+        BANTUAN DITERIMA
       </div>
 
-      <p class="text-xl font-bold text-left">NUR931</p>
+      <p class="text-xl font-bold text-left text-green-600">NUR931</p>
 
       <div class="flex mb-2">
         <div class="w-4 mr-2">
