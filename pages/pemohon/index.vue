@@ -17,17 +17,13 @@
     <div class="text-gray-700 py-2 text-xs">Terdapat 90 rekod</div>
 
     <div class="flex flex-wrap">
-      <PemohonCard />
-      <PemohonCard />
-      <PemohonCard />
-      <PemohonCard />
-      <PemohonCard />
+      <PemohonCard v-for="data in donatees" :data="data" :key="data.id" />
     </div>
   </div>
 </template>
 
 <script>
-import PemohonCard from '../../components/pemohon/PemohonCard.vue'
+import PemohonCard from '~/components/pemohon/PemohonCard.vue'
 import {
   //   allPostcodes,
   getStates,
@@ -43,6 +39,49 @@ export default {
       selectedState: '-',
       cities: [],
       selectedCity: '-',
+      donatees: [
+        {
+          id: 1,
+          code: 'Man Pisang',
+          street: 'Jalan SP4/1',
+          city: 'Jenjarom',
+          tags: ['Makanan', 'Barangan Dapur'],
+          created_at_alt: '10 minit lalu',
+          helpers_no: 4,
+          content: 'Kehilangan pekerjaan sejak 3 bulan laku..',
+        },
+        {
+          id: 2,
+          code: 'Sarah',
+          street: 'Jalan SP4/1',
+          city: 'Jenjarom',
+          tags: ['Makanan', 'Barangan Dapur'],
+          created_at_alt: '15 minit lalu',
+          helpers_no: 1,
+          content: 'Amat memerlukan bantuan penjagaan 3 orang anak kecil..',
+        },
+        {
+          id: 3,
+          code: 'Adam',
+          street: 'Jalan Banting 3/1',
+          city: 'Jenjarom',
+          tags: ['Makanan', 'Barangan Dapur'],
+          created_at_alt: '30 minit lalu',
+          helpers_no: 2,
+          content: 'Tidak makan sejak sehari lalu.amat memerlukan makanan..',
+        },
+        {
+          id: 4,
+          code: 'Noh Adam',
+          street: 'Jalan DP 3/1',
+          city: 'Jenjarom',
+          tags: ['Makanan', 'Pakaian'],
+          created_at_alt: '1 jam lalu',
+          helpers_no: 3,
+          content:
+            'Bekerja sebagai penjaga, tidak cukup duit beli pampers anak..',
+        },
+      ],
     }
   },
   methods: {

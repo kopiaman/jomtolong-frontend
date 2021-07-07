@@ -7,16 +7,31 @@
 
       <input class="input" placeholder="No Tel/ Whatsapp Penerima" />
 
-      <select class="input" v-model="selectedState" @change="getCitiesData()">
-        <option value="-">Negeri</option>
-        <option v-for="state in states" :key="state">{{ state }}</option>
-      </select>
-
-      <select class="input" v-model="selectedCity">
-        <option value="-">Bandar</option>
-        <option v-for="city in cities" :key="city">{{ city }}</option>
-      </select>
-
+      <div class="text-xs ml-1 mt-2">Alamat</div>
+      <div class="flex flex-wrap -mx-1">
+        <div class="w-full lg:w-1/3 lg:p-1">
+          <input
+            class="input"
+            placeholder="Nama Jalan/ Taman (Tidak perlu no unit)"
+          />
+        </div>
+        <div class="w-full lg:w-1/3 lg:p-1">
+          <select
+            class="input"
+            v-model="selectedState"
+            @change="getCitiesData()"
+          >
+            <option value="-">Negeri</option>
+            <option v-for="state in states" :key="state">{{ state }}</option>
+          </select>
+        </div>
+        <div class="w-full lg:w-1/3 lg:p-1">
+          <select class="input" v-model="selectedCity">
+            <option value="-">Daerah</option>
+            <option v-for="city in cities" :key="city">{{ city }}</option>
+          </select>
+        </div>
+      </div>
       <textarea
         class="textarea"
         rows="5"

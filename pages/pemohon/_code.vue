@@ -29,6 +29,19 @@
             <img src="/img/icon-whatsapp.png" class="h-5 mr-3" />
             <div class="text-sm text-left">Whatsapp</div>
           </div>
+
+          <div class="text-xs mt-4 text-gray-600 flex justify-between">
+            <div>
+              <div class="font-bold">Pemohon</div>
+              <div class="underline my-1">Edit Maklumat</div>
+              <div class="underline">Bantuan Mencukupi</div>
+            </div>
+            <div class="text-blue-500">
+              <div class="font-bold">Penyumbang</div>
+              <div class="underline my-1">Saya telah membantu</div>
+              <div class="underline">Buat Laporan</div>
+            </div>
+          </div>
         </div>
       </div>
 
