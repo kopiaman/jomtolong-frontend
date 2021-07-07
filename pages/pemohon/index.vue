@@ -49,6 +49,7 @@ export default {
           created_at_alt: '10 minit lalu',
           helpers_no: 4,
           content: 'Kehilangan pekerjaan sejak 3 bulan laku..',
+          is_enough: false,
         },
         {
           id: 2,
@@ -59,6 +60,7 @@ export default {
           created_at_alt: '15 minit lalu',
           helpers_no: 1,
           content: 'Amat memerlukan bantuan penjagaan 3 orang anak kecil..',
+          is_enough: false,
         },
         {
           id: 3,
@@ -69,6 +71,7 @@ export default {
           created_at_alt: '30 minit lalu',
           helpers_no: 2,
           content: 'Tidak makan sejak sehari lalu.amat memerlukan makanan..',
+          is_enough: true,
         },
         {
           id: 4,
@@ -80,6 +83,7 @@ export default {
           helpers_no: 3,
           content:
             'Bekerja sebagai penjaga, tidak cukup duit beli pampers anak..',
+          is_enough: true,
         },
       ],
     }

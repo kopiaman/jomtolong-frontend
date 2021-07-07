@@ -12,12 +12,21 @@
         p-4
       "
     >
-      <div class="bg-green-200 position-absolute position-top-right tag flex">
-        {{ data.helpers_no }}
-        <img src="/svg/shake-hands.svg" class="h-15px ml-1" />
+      <div class="position-absolute position-top-right flex">
+        <div class="tag bg-green-200 flex">
+          {{ data.helpers_no }}
+          <img src="/svg/shake-hands.svg" class="h-15px ml-1" />
+        </div>
+
+        <div class="tag bg-green-400 flex text-white">
+          Mencukupi
+          <img src="/svg/checked.svg" class="h-15px ml-1" />
+        </div>
       </div>
 
-      <p class="text-xl font-bold text-left text-green-600">{{ data.code }}</p>
+      <p class="text-xl font-bold text-left text-indigo-600 pt-3">
+        {{ data.code }}
+      </p>
 
       <div class="flex mb-2">
         <div class="w-4 mr-2">

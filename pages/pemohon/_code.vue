@@ -29,8 +29,10 @@
             <img src="/img/icon-whatsapp.png" class="h-5 mr-3" />
             <div class="text-sm text-left">Whatsapp</div>
           </div>
+        </div>
 
-          <div class="text-xs mt-4 text-gray-600 flex justify-between">
+        <div class="bg-gray-100 border rounded-lg border-gray-200 p-4 mt-2">
+          <div class="text-xs text-gray-600 flex justify-between">
             <div>
               <div class="font-bold">Pemohon</div>
               <div class="underline my-1">Edit Maklumat</div>
