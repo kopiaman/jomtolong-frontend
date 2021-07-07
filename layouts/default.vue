@@ -1,16 +1,6 @@
 <template>
   <div>
-    <div
-      class="
-        mb-3
-        flex
-        justify-between
-        items-center
-        bg-gray-200
-        p-2
-        border-radius-10
-      "
-    >
+    <div class="mb-3 flex justify-between items-center bg-gray-200 p-2">
       <div class="px-5 flex items-center justify-between w-full">
         <div class="lg:w-2/3">
           <img
@@ -23,49 +13,27 @@
         <!-- quick button -->
         <div class="w-1/3 flex hide-mobile">
           <div
-            class="
-              w-full
-              bg-indigo-600
-              border
-              rounded-lg
-              border-green-200
-              p-2
-              px-4
-              inline-flex
-              items-center
-              m-1
-              clickable
-            "
+            class="bg-indigo-600 button-big"
             @click="$router.push('/pemohon/borang')"
             v-if="$route.path == '/pemohon'"
           >
-            <img src="/img/icon-flag-me.png" class="h-12 mr-3" />
+            <div class="mr-3">
+              <img src="/img/icon-flag-me.png" class="h-10" />
+            </div>
             <div class="text-xs font-bold text-left text-white">
               Mohon Bantuan <br />(diri sendiri/ orang lain)
             </div>
           </div>
 
           <div
-            class="
-              w-full
-              bg-green-500
-              border
-              rounded-lg
-              border-green-200
-              p-2
-              px-4
-              inline-flex
-              items-center
-              m-1
-              clickable
-            "
+            class="bg-green-500 button-big"
             @click="$router.push('/pusatbantuan/borang')"
             v-if="$route.path == '/pusatbantuan'"
           >
             <div class="text-xs font-bold text-left w-2/3">
               Daftar Pusat Bantuan/ Food Bank di kawasan anda
             </div>
-            <img src="/img/icon-ngo.png" class="h-12 ml-3" />
+            <img src="/img/icon-ngo.png" class="h-10 ml-3" />
           </div>
         </div>
       </div>

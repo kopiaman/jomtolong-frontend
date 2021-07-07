@@ -23,10 +23,10 @@
     </div>
 
     <div class="flex flex-col flex-center text-center w-1/3 p-2">
-      <div class="clickable" @click="$router.push('/misc')">
-        <img src="/img/icon-ngo.png" class="h-30px" />
+      <div class="clickable" @click="$router.push('/misc/about')">
+        <img src="/svg/meat.svg" class="h-30px" />
       </div>
-      <div class="font-size-10">Lain-lain</div>
+      <div class="font-size-10">FAQ</div>
     </div>
   </div>
 </template>

@@ -15,15 +15,19 @@
 }
 
 .button {
-  @apply border p-3 m-1 h-12 w-full rounded-lg;
+  @apply border rounded-lg p-3 m-1 h-12 w-full  flex justify-center text-center cursor-pointer;
+}
+
+.button-big {
+  @apply border rounded-lg p-3 m-1 h-16 w-full  flex justify-center text-center cursor-pointer;
 }
 
 .button-primary {
-  @apply bg-green-500 border rounded-lg p-3 m-1 h-12 w-full   w-full flex justify-center text-center;
+  @apply bg-green-500 border rounded-lg p-3 m-1 h-12 w-full  flex justify-center text-center cursor-pointer;
 }
 
 .button-secondary {
-  @apply bg-white border border-green-200 rounded-lg p-3 m-1 h-12 w-full flex justify-center text-center;
+  @apply bg-white border border-green-200 rounded-lg p-3 m-1 h-12 w-full flex justify-center text-center cursor-pointer;
 }
 
 .tag {
@@ -32,4 +36,8 @@
 
 h1 {
   @apply text-xl font-bold text-green-600;
+}
+
+h2 {
+  @apply font-bold text-green-500;
 }
