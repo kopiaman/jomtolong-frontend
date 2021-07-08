@@ -4,6 +4,20 @@
 
     <div class="flex flex-wrap position-relative">
       <div class="p-2 lg:w-1/2 w-full">
+        <div class="bg-gray-300 flex flex-center p-5 leading-loose rounded-lg">
+          hampir 10 tahun bergelar ibu tunggal selepas kematian suami pada
+          September 2011 cukup mematangkannya dan sudah biasa bersusah-payah
+          dengan melakukan pelbagai pekerjaan untuk menyara keluarga. "Selepas
+          pemergian suami, saya mengambil alih kerjayanya sebagai pemandu van
+          sekolah yang pada awalnya bermula dengan kereta. Van sekolah itu
+          dibeli pada 2013 melalui pinjaman Amanah Ikhtiar Malaysia (AIM).
+          "Sambil-sambil ada masa terluang, saya juga membuat kuih bahulu dan
+          ambil upah cuci rumah sebagai pendapatan sampingan," katanya ketika
+          ditemui di rumahnya di Jalan Jasa, Batu Caves, di sini.
+        </div>
+      </div>
+
+      <div class="p-2 lg:w-1/2 w-full">
         <div class="bg-white border rounded-lg border-gray-400 p-4">
           <div class="flex mb-2">
             <!-- <div class="w-4 mr-2">
@@ -44,20 +58,6 @@
               <div class="underline">Buat Laporan</div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="p-2 lg:w-1/2 w-full">
-        <div class="bg-gray-300 flex flex-center p-5 leading-loose rounded-lg">
-          hampir 10 tahun bergelar ibu tunggal selepas kematian suami pada
-          September 2011 cukup mematangkannya dan sudah biasa bersusah-payah
-          dengan melakukan pelbagai pekerjaan untuk menyara keluarga. "Selepas
-          pemergian suami, saya mengambil alih kerjayanya sebagai pemandu van
-          sekolah yang pada awalnya bermula dengan kereta. Van sekolah itu
-          dibeli pada 2013 melalui pinjaman Amanah Ikhtiar Malaysia (AIM).
-          "Sambil-sambil ada masa terluang, saya juga membuat kuih bahulu dan
-          ambil upah cuci rumah sebagai pendapatan sampingan," katanya ketika
-          ditemui di rumahnya di Jalan Jasa, Batu Caves, di sini.
         </div>
       </div>
     </div>
