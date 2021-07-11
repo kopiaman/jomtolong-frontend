@@ -17,7 +17,7 @@
     <div class="text-gray-700 py-2 text-xs">Terdapat 90 rekod</div>
 
     <div class="flex flex-wrap">
-      <PemohonCard v-for="data in donatees" :data="data" :key="data.id" />
+      <PemohonCard v-for="card in cards" :card="card" :key="card.id" />
     </div>
   </div>
 </template>
@@ -31,8 +31,16 @@ import {
   //   getPostcodes,
   //   findPostcode,
 } from 'malaysia-postcodes'
+
+import { mapState } from 'vuex'
+
 export default {
   components: { PemohonCard },
+  computed: {
+    ...mapState({
+      cards: (state) => state.card_donatee.cards,
+    }),
+  },
   data() {
     return {
       states: getStates(),
@@ -87,6 +95,12 @@ export default {
         },
       ],
     }
+  },
+  mounted() {
+    this.$store.dispatch('card_donatee/index', {
+      state: 'Kedah',
+      district: 'Jitra',
+    })
   },
   methods: {
     getCitiesData() {

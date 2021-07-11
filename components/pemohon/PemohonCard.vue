@@ -14,7 +14,7 @@
     >
       <div class="position-absolute position-top-right flex">
         <div class="tag bg-green-200 flex">
-          {{ data.helpers_no }}
+          <!-- {{ card.helpers_no }} -->
           <img src="/svg/shake-hands.svg" class="h-15px ml-1" />
         </div>
 
@@ -25,32 +25,32 @@
       </div>
 
       <p class="text-xl font-bold text-left text-indigo-600 pt-3">
-        {{ data.code }}
+        {{ card.name }}
       </p>
 
       <div class="flex mb-2">
         <div class="w-4 mr-2">
           <img class="h-15px" src="/img/icon-location.png" />
         </div>
-        <p class="text-xs text-gray-600">{{ data.street }}, {{ data.city }}</p>
-      </div>
-
-      <div class="flex -mx-1">
-        <!-- <div class="w-4 mr-2">
-          <img class="" src="/img/icon-help.png" />
-        </div> -->
-        <p class="text-xs">
-          <span v-for="tag in data.tags" class="tag bg-gray-200"
-            >{{ tag }}
-          </span>
+        <p class="text-xs text-gray-600">
+          {{ card.street }}, {{ card.district }}
         </p>
       </div>
 
-      <div class="text-xs my-2 p-2">{{ data.content }}</div>
+      <!-- <div class="flex -mx-1">
+       
+        <p class="text-xs">
+          <span v-for="tag in card.tags" class="tag bg-gray-200"
+            >{{ tag }}
+          </span>
+        </p>
+      </div> -->
+
+      <div class="text-xs my-2 p-2">{{ card.info }}</div>
 
       <div class="w-full position-absolute position-bottom-right pr-2 pb-2">
         <p class="text-xs text-right text-gray-500">
-          {{ data.created_at_alt }}
+          {{ card.created_at_alt }}
         </p>
       </div>
     </div>
@@ -59,7 +59,7 @@
 
 <script>
 export default {
-  props: ['data'],
+  props: ['card'],
   methods: {
     gotopage() {
       this.$router.push('/pemohon/nur31')

@@ -50,7 +50,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'http://staging.quran.com:3000/api/v3'
+    baseURL: 'http://jomtolong-backend.test/api/v1'
   },
   /*
    ** Build configuration
