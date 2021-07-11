@@ -230,7 +230,7 @@ export default {
         state: this.selected_state,
         district: this.selected_district,
         info: this.info,
-        service: '',
+        service: JSON.stringify(['makanan', 'pakaian']),
         lat: this.lat ? '' : '',
         long: this.long ? '' : '',
         code: this.code,
