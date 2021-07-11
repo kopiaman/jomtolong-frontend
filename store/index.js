@@ -1,8 +1,8 @@
 export const state = () => ({
   
 	//filtering
-	selected_state: '-',
-	selected_district: '-',
+	selected_state: '',
+	selected_district: '',
 
 	//loading global
 	is_loading: false
