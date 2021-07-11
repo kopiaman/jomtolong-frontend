@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full lg:w-1/3 p-2" @click="gotopage()">
+  <div class="w-full lg:w-1/3 p-2" @click="gotopage(card)">
     <div
       class="
         clickable
@@ -61,8 +61,8 @@
 export default {
   props: ['card'],
   methods: {
-    gotopage() {
-      this.$router.push('/pemohon/nur31')
+    gotopage(card) {
+      this.$router.push(`/pemohon/${card.slug}`)
     },
   },
 }

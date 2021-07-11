@@ -45,7 +45,7 @@ export const actions = {
 
     const res = await this.$axios.$get(`/cards/${slug}`)
 
-    console.log(res)
+    context.commit('UPDATE_card',res)
     return res
   },
   async store(context,parameters) {
