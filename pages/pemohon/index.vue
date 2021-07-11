@@ -3,7 +3,7 @@
     <h1>Senarai Pemohon Bantuan</h1>
 
     <div class="flex">
-      <select class="input" v-model="selectedState" @change="getCitiesData()">
+      <select class="input" v-model="selected_state" @change="getCitiesData()">
         <option value="">Negeri</option>
         <option v-for="state in states" :key="state">{{ state }}</option>
       </select>
@@ -23,7 +23,9 @@
       </div>
     </div>
 
-    <div class="text-gray-700 py-2 text-xs">Terdapat 90 rekod</div>
+    <div class="text-gray-700 py-2 text-xs">
+      Terdapat {{ cards_result.total }} rekod
+    </div>
 
     <div class="flex flex-wrap">
       <PemohonCard v-for="card in cards" :card="card" :key="card.id" />
@@ -48,12 +50,22 @@ export default {
   computed: {
     ...mapState({
       cards: (state) => state.card_donatee.cards,
+      cards_result: (state) => state.card_donatee.cards_result,
+      // selected_state: (state) => state.selected_state,
     }),
+    selected_state: {
+      get() {
+        return this.$store.state.selected_state
+      },
+      set(value) {
+        this.$store.commit('UPDATE_selected_state', value)
+      },
+    },
   },
   data() {
     return {
       states: getStates(),
-      selectedState: '',
+      // selected_state: '',
       cities: [],
       selectedCity: '',
       donatees: [
@@ -111,6 +123,7 @@ export default {
       district: this.$store.state.selected_district,
     })
   },
+
   methods: {
     search() {
       this.$store.commit('UPDATE_is_loading', true)
@@ -127,15 +140,11 @@ export default {
       //update selected state in store
       this.$store.commit('UPDATE_selected_district', this.selectedCity)
     },
-    getCitiesData(state) {
-      if (this.selectedState != '-') {
-        //update selected state in store
-        this.$store.commit('UPDATE_selected_state', this.selectedState)
-        this.cities = getCities(this.selectedState)
+    getCitiesData() {
+      if (this.selected_state != '-' && this.selected_state != '') {
+        this.cities = getCities(this.selected_state)
       }
-      if (this.selectedState == 'Wp Kuala Lumpur') {
-        //update selected state in store
-        this.$store.commit('UPDATE_selected_state', this.selectedState)
+      if (this.selected_state == 'Wp Kuala Lumpur') {
         this.cities = [
           'Bukit Bintang',
           'Titiwangsa',
