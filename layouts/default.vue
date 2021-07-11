@@ -39,7 +39,8 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container position-relative">
+      <Loading />
       <nuxt />
     </div>
     <!-- footer -->
@@ -49,9 +50,10 @@
 
 <script>
 import FooterNav from '../components/shared/FooterNav.vue'
+import Loading from '../components/shared/Loading.vue'
 
 export default {
-  components: { FooterNav },
+  components: { FooterNav, Loading },
 }
 </script>
 
