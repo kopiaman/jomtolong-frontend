@@ -33,7 +33,7 @@
           <img class="h-15px" src="/img/icon-location.png" />
         </div>
         <p class="text-xs text-gray-600">
-          {{ card.street }}, {{ card.district }}
+          {{ card.street }}, {{ card.district }}, {{ card.state }}
         </p>
       </div>
 

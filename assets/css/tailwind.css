@@ -41,3 +41,7 @@ h1 {
 h2 {
   @apply font-bold text-green-500;
 }
+
+.label {
+  @apply text-sm font-bold ml-1 mt-2;
+}
