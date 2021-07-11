@@ -113,11 +113,15 @@ export default {
   },
   methods: {
     search() {
+      this.$store.commit('UPDATE_is_loading', true)
+
       console.log('carii')
-      this.$store.dispatch('card_donatee/index', {
-        state: this.$store.state.selected_state,
-        district: this.$store.state.selected_district,
-      })
+      this.$store
+        .dispatch('card_donatee/index', {
+          state: this.$store.state.selected_state,
+          district: this.$store.state.selected_district,
+        })
+        .finally(() => this.$store.commit('UPDATE_is_loading', false))
     },
     selectedCityStore() {
       //update selected state in store
