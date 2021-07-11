@@ -8,11 +8,7 @@
         <option v-for="state in states" :key="state">{{ state }}</option>
       </select>
 
-      <select
-        class="input"
-        v-model="selectedCity"
-        @change="selectedCityStore()"
-      >
+      <select class="input" v-model="selected_district">
         <option value="">Kawasan</option>
         <option v-for="city in cities" :key="city">{{ city }}</option>
       </select>
@@ -61,60 +57,19 @@ export default {
         this.$store.commit('UPDATE_selected_state', value)
       },
     },
+    selected_district: {
+      get() {
+        return this.$store.state.selected_district
+      },
+      set(value) {
+        this.$store.commit('UPDATE_selected_district', value)
+      },
+    },
   },
   data() {
     return {
       states: getStates(),
-      // selected_state: '',
       cities: [],
-      selectedCity: '',
-      donatees: [
-        {
-          id: 1,
-          code: 'Man Pisang',
-          street: 'Jalan SP4/1',
-          city: 'Jenjarom',
-          tags: ['Makanan', 'Barangan Dapur'],
-          created_at_alt: '10 minit lalu',
-          helpers_no: 4,
-          content: 'Kehilangan pekerjaan sejak 3 bulan laku..',
-          is_enough: false,
-        },
-        {
-          id: 2,
-          code: 'Sarah',
-          street: 'Jalan SP4/1',
-          city: 'Jenjarom',
-          tags: ['Makanan', 'Barangan Dapur'],
-          created_at_alt: '15 minit lalu',
-          helpers_no: 1,
-          content: 'Amat memerlukan bantuan penjagaan 3 orang anak kecil..',
-          is_enough: false,
-        },
-        {
-          id: 3,
-          code: 'Adam',
-          street: 'Jalan Banting 3/1',
-          city: 'Jenjarom',
-          tags: ['Makanan', 'Barangan Dapur'],
-          created_at_alt: '30 minit lalu',
-          helpers_no: 2,
-          content: 'Tidak makan sejak sehari lalu.amat memerlukan makanan..',
-          is_enough: true,
-        },
-        {
-          id: 4,
-          code: 'Noh Adam',
-          street: 'Jalan DP 3/1',
-          city: 'Jenjarom',
-          tags: ['Makanan', 'Pakaian'],
-          created_at_alt: '1 jam lalu',
-          helpers_no: 3,
-          content:
-            'Bekerja sebagai penjaga, tidak cukup duit beli pampers anak..',
-          is_enough: true,
-        },
-      ],
     }
   },
   created() {
@@ -128,7 +83,6 @@ export default {
     search() {
       this.$store.commit('UPDATE_is_loading', true)
 
-      console.log('carii')
       this.$store
         .dispatch('card_donatee/index', {
           state: this.$store.state.selected_state,
