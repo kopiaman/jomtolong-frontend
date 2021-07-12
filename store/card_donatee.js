@@ -27,10 +27,7 @@ export const actions = {
       status : 'approved'
     }
 
-    const options = {
-      // headers: { Authorization: `Bearer ${context.rootState.auth.api_token}` }
-    }
-
+    // const options = { headers: { Authorization: `Bearer ${context.rootState.auth.api_token}` }}
     const res = await this.$axios.$get('/cards', { params })
 
     context.commit('UPDATE_cards_result',res)
@@ -39,23 +36,33 @@ export const actions = {
   },
   async show(context,slug) {
    
-    const options = {
-      // headers: { Authorization: `Bearer ${context.rootState.auth.api_token}` }
-    }
-
+    //const options = { headers: { Authorization: `Bearer ${context.rootState.auth.api_token}` }}
     const res = await this.$axios.$get(`/cards/${slug}`)
-
     context.commit('UPDATE_card',res)
     return res
   },
+
   async store(context,parameters) {
 
-    const options = {
-      // headers: { Authorization: `Bearer ${context.rootState.auth.api_token}` }
-    }
-
+    // const options = { headers: { Authorization: `Bearer ${context.rootState.auth.api_token}` }}
     const res = await this.$axios.$post('/cards', {...parameters})
-
     return res
   },
+
+  async request_update(context,parameters) {
+
+    //const options = {  headers: { Authorization: `Bearer ${context.rootState.auth.api_token}` }}
+    const res = await this.$axios.$put(`/cards/${parameters.slug}/request_update`, {...parameters})
+    return res
+  },
+
+  // async UPDATE(context, data) {
+  //   this.$axios.setToken(context.rootState.auth.jwtToken, 'Bearer')
+  //   let param = {
+  //     name: data.name,
+  //     id: data.id,
+  //     color: 'white'
+  //   }
+  //   const res = await this.$axios.$put(`/bookmarks/${param.id}/update`, param)
+  // },
 }

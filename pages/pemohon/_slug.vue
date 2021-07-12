@@ -3,6 +3,18 @@
     <TitleBack title="Maklumat Pemohon" />
 
     <div class="flex flex-wrap position-relative">
+      <div class="position-absolute position-top-right flex">
+        <!-- <div class="tag bg-green-200 flex">
+          {{ card.helpers_no }}
+          <img src="/svg/shake-hands.svg" class="h-15px ml-1" />
+        </div> -->
+
+        <div class="tag bg-green-400 flex text-white" v-if="card.is_enough">
+          Mencukupi
+          <img src="/svg/checked.svg" class="h-15px ml-1" />
+        </div>
+      </div>
+
       <div class="p-2 lg:w-1/2 w-full">
         <div class="bg-gray-300 flex flex-center p-5 leading-loose rounded-lg">
           {{ card.info }}
@@ -50,7 +62,9 @@
             <div>
               <div class="font-bold">Pemohon</div>
               <div class="underline my-1">Edit Maklumat</div>
-              <div class="underline">Bantuan Mencukupi</div>
+              <div class="underline clickable" @click="openModalIsEnough()">
+                Bantuan Mencukupi
+              </div>
             </div>
             <div class="text-blue-500">
               <div class="font-bold">Penyumbang</div>
@@ -75,7 +89,9 @@ export default {
       card: (state) => state.card_donatee.card,
     }),
     services() {
-      return JSON.parse(this.card.service)
+      if (this.card) {
+        return JSON.parse(this.card.service)
+      }
     },
   },
   components: {
@@ -83,6 +99,47 @@ export default {
   },
   created() {
     this.$store.dispatch('card_donatee/show', this.$route.params.slug)
+  },
+  methods: {
+    openModalIsEnough() {
+      // this.$swal('Hello Vue world!!!')
+
+      this.$swal({
+        title: 'Bantuan Telah Diterima/Mencukupi?',
+        input: 'text',
+        html: `Sila masukkan kata laluan (password) yang sama dalam permohonan anda untuk pengesahan`,
+        inputValue: '',
+        showCancelButton: true,
+        inputValidator: (value) => {
+          if (!value) {
+            return 'Sila masukkan kata laluan!'
+          }
+        },
+      }).then((input) => {
+        const param = {
+          slug: this.card.slug,
+          is_enough: 1,
+          code: input.value,
+        }
+
+        this.$store
+          .dispatch('card_donatee/request_update', param)
+          .then((res) => {
+            this.$swal({
+              icon: 'success',
+              title: 'Berjaya',
+              text: 'Maklumat Dikemaskini - Bantuan Mencukupi',
+            })
+          })
+          .catch((err) => {
+            this.$swal({
+              icon: 'error',
+              title: 'Oops...',
+              text: err,
+            })
+          })
+      })
+    },
   },
 }
 </script>

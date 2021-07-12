@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'JOMTOLONG.MY - Platform bantuan komuniti',
+    title: 'JomTolong.my - Platform bantuan komuniti dan NGO',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -19,7 +19,11 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { 
+    color: '#09ebb8',
+		background: 'white',
+		height: '30px'
+   },
   /*
    ** Global CSS
    */
@@ -27,7 +31,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/axios'},
+    { src: '~plugins/vue-modal', ssr: false },
+    { src: '~plugins/sweetalert2', ssr: false },
+  ],
   /*
    ** Nuxt.js dev-modules
    */
