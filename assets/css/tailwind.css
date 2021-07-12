@@ -8,10 +8,10 @@
   @apply min-h-screen  mx-auto p-5 pb-20;
 }
 .input {
-  @apply border p-3 m-1 h-12 w-full rounded-lg text-xs border-gray-500 text-gray-600;
+  @apply border p-3  h-12 w-full rounded-lg text-xs border-gray-500 text-gray-600;
 }
 .textarea {
-  @apply border p-3 m-1  w-full rounded-lg text-xs border-gray-500 text-gray-600;
+  @apply border p-3  w-full rounded-lg text-xs border-gray-500 text-gray-600;
 }
 
 .button {

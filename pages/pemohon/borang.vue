@@ -3,32 +3,41 @@
     <h1>Permohonan Bantuan</h1>
 
     <div :class="currentStep == '1' ? 'show' : 'hide'" id="step1">
-      <input
-        class="input"
-        name="name"
-        v-model="name"
-        placeholder="Nama Penerima (tidak dipaparkan"
-      />
+      <div class="flex flex-wrap -mx-1">
+        <div class="w-full lg:w-1/2 p-1">
+          <input
+            class="input"
+            name="name"
+            v-model="name"
+            autocomplete="off"
+            placeholder="Nama Penerima (tidak dipaparkan"
+          />
+        </div>
 
-      <input
-        class="input"
-        name="tel"
-        v-model="tel"
-        placeholder="No Tel/ Whatsapp Penerima"
-      />
+        <div class="w-full lg:w-1/2 p-1">
+          <input
+            class="input"
+            name="tel"
+            v-model="tel"
+            autocomplete="off"
+            placeholder="No Tel/ Whatsapp Penerima"
+          />
+        </div>
+      </div>
 
       <div class="label">Alamat</div>
       <div class="flex flex-wrap -mx-1">
-        <div class="w-full lg:w-1/3 lg:p-1">
+        <div class="w-full lg:w-1/3 p-1">
           <input
             class="input"
             type="text"
             name="street"
             v-model="street"
+            autocomplete="off"
             placeholder="Nama Jalan/ Taman "
           />
         </div>
-        <div class="w-full lg:w-1/3 lg:p-1">
+        <div class="w-full lg:w-1/3 p-1">
           <select
             class="input"
             v-model="selected_state"
@@ -38,46 +47,37 @@
             <option v-for="state in states" :key="state">{{ state }}</option>
           </select>
         </div>
-        <div class="w-full lg:w-1/3 lg:p-1">
+        <div class="w-full lg:w-1/3 p-1">
           <select class="input" v-model="selected_district">
             <option value="">Kawasan</option>
             <option v-for="city in cities" :key="city">{{ city }}</option>
           </select>
         </div>
       </div>
-      <textarea
-        class="textarea"
-        rows="5"
-        v-model="info"
-        placeholder="Ringkasan Situasi penerima, bantuan yang diperlukan secara spesifik"
-      >
-      </textarea>
+      <div class="p-1 -mx-1">
+        <textarea
+          class="textarea"
+          rows="5"
+          v-model="info"
+          placeholder="Ringkasan Situasi penerima, bantuan yang diperlukan secara spesifik"
+        >
+        </textarea>
+      </div>
 
       <div class="label">Kategori Bantuan diperlukan</div>
       <div class="flex flex-wrap p-1">
-        <div class="flex items-center text-xs w-1/3">
-          <input type="checkbox" class="mr-2" />
-          <label>Makanan </label>
-        </div>
-        <div class="flex items-center text-xs w-1/3">
-          <input type="checkbox" class="mr-2" />
-          <label>Pakaian</label>
-        </div>
-        <div class="flex items-center text-xs w-1/3">
-          <input type="checkbox" class="mr-2" />
-          <label>Tempat Tinggal</label>
-        </div>
-        <div class="flex items-center text-xs w-1/3">
-          <input type="checkbox" class="mr-2" />
-          <label>Pendidikan</label>
-        </div>
-        <div class="flex items-center text-xs w-1/3">
-          <input type="checkbox" class="mr-2" />
-          <label>Kesihatan</label>
-        </div>
-        <div class="flex items-center text-xs w-1/3">
-          <input type="checkbox" class="mr-2" />
-          <label>Lain-Lain</label>
+        <div
+          class="flex items-center text-xs w-1/3"
+          v-for="service in services"
+          :key="service"
+        >
+          <input
+            type="checkbox"
+            class="mr-2"
+            :value="service"
+            v-model="selected_services"
+          />
+          <label>{{ service }} </label>
         </div>
       </div>
 
@@ -188,8 +188,26 @@ export default {
       tel: '',
       tel_is_whatsapp: 1,
       info: '',
-      service: '',
+
       code: '',
+
+      // jenis bantuan
+      selected_services: [],
+      services: [
+        'Makanan',
+        'Barangan Asas',
+        'Tempat Tinggal',
+        'Perubatan',
+        'Pakaian',
+        'Pendidikan',
+        'Alat Pembelajaran',
+        'Bayi',
+        'Pekerjaan',
+        'Psikologi',
+        'Keagamaan',
+        'Bil Utiliti',
+        'Lain-lain',
+      ],
     }
   },
   methods: {
@@ -230,7 +248,7 @@ export default {
         state: this.selected_state,
         district: this.selected_district,
         info: this.info,
-        service: JSON.stringify(['makanan', 'pakaian']),
+        service: JSON.stringify(this.selected_services),
         lat: this.lat ? '' : '',
         long: this.long ? '' : '',
         code: this.code,

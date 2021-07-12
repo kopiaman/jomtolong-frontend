@@ -12,11 +12,13 @@
       <div class="p-2 lg:w-1/2 w-full">
         <div class="bg-white border rounded-lg border-gray-400 p-4">
           <div class="flex mb-2">
-            <!-- <div class="w-4 mr-2">
-              <img class="" src="/img/icon-help.png" />
-            </div> -->
-            <div class="bg-red-500 text-white tag">Makanan</div>
-            <div class="bg-blue-500 text-white tag">Pakaian</div>
+            <div
+              class="bg-gray-200 text-black tag"
+              v-for="service in services"
+              :key="service"
+            >
+              {{ service }}
+            </div>
           </div>
 
           <div class="flex mb-2">
@@ -68,6 +70,9 @@ export default {
     ...mapState({
       card: (state) => state.card_donatee.card,
     }),
+    services() {
+      return JSON.parse(this.card.service)
+    },
   },
   components: {
     TitleBack,

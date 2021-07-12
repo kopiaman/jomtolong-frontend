@@ -50,29 +50,12 @@ export const actions = {
   },
   async store(context,parameters) {
 
-    // const body = {
-    //   type: 'donatee',
-    //   status : 'approved',
-    //   ...parameters
-    //   name: parameters.name,
-    //   tel : parameters.tel,
-    //   tel_is_whatsapp : parameters.tel_is_whatsapp,
-    //   state : parameters.state,
-    //   district : parameters.district,
-    //   info : parameters.info,
-    //   service : parameters.service,
-    //   lat : parameters.lat,
-    //   long : parameters.long,
-    //   code : parameters.code,
-    // }
-
     const options = {
       // headers: { Authorization: `Bearer ${context.rootState.auth.api_token}` }
     }
 
     const res = await this.$axios.$post('/cards', {...parameters})
 
-    console.log(res)
     return res
   },
 }

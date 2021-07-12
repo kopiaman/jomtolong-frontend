@@ -13,12 +13,12 @@
       "
     >
       <div class="position-absolute position-top-right flex">
-        <div class="tag bg-green-200 flex">
-          <!-- {{ card.helpers_no }} -->
+        <!-- <div class="tag bg-green-200 flex">
+          {{ card.helpers_no }}
           <img src="/svg/shake-hands.svg" class="h-15px ml-1" />
-        </div>
+        </div> -->
 
-        <div class="tag bg-green-400 flex text-white">
+        <div class="tag bg-green-400 flex text-white" v-if="card.is_enough">
           Mencukupi
           <img src="/svg/checked.svg" class="h-15px ml-1" />
         </div>
@@ -46,7 +46,7 @@
         </p>
       </div> -->
 
-      <div class="text-xs my-2 p-2">{{ card.info }}</div>
+      <div class="text-xs my-2 p-2">{{ card.info_truncate }}</div>
 
       <div class="w-full position-absolute position-bottom-right pr-2 pb-2">
         <p class="text-xs text-right text-gray-500">
