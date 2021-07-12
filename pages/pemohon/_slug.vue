@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TitleBack :title="card.name" />
+    <TitleBack title="Maklumat Pemohon" />
 
     <div class="flex flex-wrap position-relative">
       <div class="p-2 lg:w-1/2 w-full">
@@ -11,6 +11,19 @@
 
       <div class="p-2 lg:w-1/2 w-full">
         <div class="bg-white border rounded-lg border-gray-400 p-4">
+          <h1 class="py-2">{{ card.name }}</h1>
+          <div class="flex mb-2">
+            <div class="w-4 mr-2">
+              <img class="" src="/img/icon-location.png" />
+            </div>
+            <p class="">
+              {{ card.street }}, {{ card.district }}, {{ card.state }}
+            </p>
+          </div>
+
+          <div class="font-bold pt-2 text-gray-600">
+            Kategori bantuan diperlukan:
+          </div>
           <div class="flex flex-wrap mb-2">
             <div
               class="bg-gray-200 text-black tag"
@@ -19,15 +32,6 @@
             >
               {{ service }}
             </div>
-          </div>
-
-          <div class="flex mb-2">
-            <div class="w-4 mr-2">
-              <img class="" src="/img/icon-location.png" />
-            </div>
-            <p class="">
-              {{ card.street }}, {{ card.district }}, {{ card.state }}
-            </p>
           </div>
 
           <div class="button-primary mt-4">

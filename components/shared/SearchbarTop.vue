@@ -1,14 +1,19 @@
 <template>
   <div class="flex">
-    <select class="input" v-model="selected_state" @change="getCitiesData()">
-      <option value="">Negeri</option>
-      <option v-for="state in states" :key="state">{{ state }}</option>
-    </select>
+    <div class="w-1/3 p-1">
+      <select class="input" v-model="selected_state" @change="getCitiesData()">
+        <option value="">Negeri</option>
+        <option v-for="state in states" :key="state">{{ state }}</option>
+      </select>
+    </div>
 
-    <select class="input" v-model="selected_district">
-      <option value="">Kawasan</option>
-      <option v-for="city in cities" :key="city">{{ city }}</option>
-    </select>
+    <div class="w-1/3 p-1">
+      <select class="input" v-model="selected_district">
+        <option value="">Kawasan</option>
+        <option v-for="city in cities" :key="city">{{ city }}</option>
+      </select>
+    </div>
+
     <div class="w-1/3 lg:w-1/8">
       <button class="button-primary text-xs font-bold" @click="search()">
         Cari

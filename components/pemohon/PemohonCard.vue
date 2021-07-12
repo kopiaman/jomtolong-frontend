@@ -37,6 +37,8 @@
         </p>
       </div>
 
+      <div class="text-xs my-2 p-2">{{ card.info_truncate }}</div>
+
       <div class="flex flex-wrap -mx-1">
         <span
           v-for="service in services"
@@ -45,8 +47,6 @@
           >{{ service }}
         </span>
       </div>
-
-      <div class="text-xs my-2 p-2">{{ card.info_truncate }}</div>
 
       <div class="w-full position-absolute position-bottom-right pr-2 pb-2">
         <p class="text-xs text-right text-gray-500">
