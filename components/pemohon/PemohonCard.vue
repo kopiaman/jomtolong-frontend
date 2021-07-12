@@ -37,14 +37,14 @@
         </p>
       </div>
 
-      <!-- <div class="flex -mx-1">
-       
-        <p class="text-xs">
-          <span v-for="tag in card.tags" class="tag bg-gray-200"
-            >{{ tag }}
-          </span>
-        </p>
-      </div> -->
+      <div class="flex flex-wrap -mx-1">
+        <span
+          v-for="service in services"
+          :key="service"
+          class="tag text-xxs bg-gray-200"
+          >{{ service }}
+        </span>
+      </div>
 
       <div class="text-xs my-2 p-2">{{ card.info_truncate }}</div>
 
@@ -60,6 +60,11 @@
 <script>
 export default {
   props: ['card'],
+  computed: {
+    services() {
+      return JSON.parse(this.card.service)
+    },
+  },
   methods: {
     gotopage(card) {
       this.$router.push(`/pemohon/${card.slug}`)

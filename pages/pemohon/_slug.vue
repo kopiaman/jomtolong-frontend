@@ -11,7 +11,7 @@
 
       <div class="p-2 lg:w-1/2 w-full">
         <div class="bg-white border rounded-lg border-gray-400 p-4">
-          <div class="flex mb-2">
+          <div class="flex flex-wrap mb-2">
             <div
               class="bg-gray-200 text-black tag"
               v-for="service in services"

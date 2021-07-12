@@ -45,3 +45,7 @@ h2 {
 .label {
   @apply text-sm font-bold ml-1 mt-2;
 }
+
+.text-xxs {
+  font-size: 0.6rem;
+}
